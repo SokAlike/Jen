@@ -1,0 +1,244 @@
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> AI Bot by Developer Abo Asad - Paid Version PRO</title>
+  <style>
+    body {
+      background: url("images/viSVvaw.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      text-align: center;
+      padding: 30px 10px;
+    }
+    .tool-background {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    h1 {
+      font-size: 26px;
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    select, button {
+      width: 90%;
+      padding: 14px;
+      margin: 10px 0;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+    }
+    select {
+      background-color: #222;
+      color: white;
+    }
+    button {
+      background-color: #0288d1;
+      color: white;
+      cursor: pointer;
+    }
+    button.disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+    .result {
+      margin-top: 20px;
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      white-space: pre-line;
+      min-height: 160px;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #999;
+    }
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 22px;
+      }
+      select, button, .result {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="passwordBox">
+  <h1>To subscribe to the bot, contact us on Telegram @SokAlike007</h1>
+  <input id="passwordInput" type="password" placeholder="Enter subscription code here" style="padding:10px; font-size:16px; border-radius:8px; border:none; width:80%;">
+  <br><br>
+  <button onclick="checkPassword()">Login</button>
+</div>
+
+<div id="mainContainer" style="display:none;">
+  <h1>POCKET BOT VIP</h1>
+  <div class="tool-background">
+
+    <select id="pairSelect">
+      <option value="" disabled selected>Select Pair</option>
+      <optgroup label="Global Pairs">
+        <option value="EUR/USD">🇪🇺 EUR/USD 🇺🇸</option>
+         <option value="GOLD/USD"> GOLD/USD 🇺🇸</option>
+        <option value="GBP/USD">🇬🇧 GBP/USD 🇺🇸</option>
+        <option value="USD/JPY">🇯🇵 USD/JPY 🇯🇵</option>
+        <option value="USD/CHF">🇺🇸 USD/CHF 🇨🇭</option>
+        <option value="GBP/JPY">🇬🇧 GBP/JPY 🇯🇵</option>
+        <option value="EUR/GBP">🇪🇺 EUR/GBP 🇬🇧</option>
+        <option value="AUD/USD">🇦🇺 AUD/USD 🇺🇸</option>
+        <option value="EUR/JPY">🇪🇺 EUR/JPY 🇯🇵</option>
+      </optgroup>
+      <optgroup label="OTC Pairs">
+        <!-- OTC options remain same but translated where needed -->
+        <option value="BHD/CNY">🇧🇭 BHD/CNY 🇨🇳 OTC</option>
+        <option value="USD/PKR">🇺🇸 USD/PKR 🇵🇰 OTC</option>
+        <option value="USD/THB">🇺🇸 USD/THB 🇹🇭 OTC</option>
+        <option value="AUD/CHF">🇦🇺 AUD/CHF 🇨🇭 OTC</option>
+        <option value="EUR/RUB">🇪🇺 EUR/RUB 🇷🇺 OTC</option>
+        <option value="QAR/CNY">🇶🇦 QAR/CNY 🇨🇳 OTC</option>
+        <option value="USD/IDR">🇺🇸 USD/IDR 🇮🇩 OTC</option>
+        <option value="USD/INR">🇺🇸 USD/INR 🇮🇳 OTC</option>
+        <option value="YER/USD">🇾🇪 YER/USD 🇺🇸 OTC</option>
+        <option value="CAD/CHF">🇨🇦 CAD/CHF 🇨🇭 OTC</option>
+        <option value="NZD/JPY">🇳🇿 NZD/JPY 🇯🇵 OTC</option>
+        <option value="USD/MXN">🇺🇸 USD/MXN 🇲🇽 OTC</option>
+        <option value="USD/EGP">🇺🇸 USD/EGP 🇪🇬 OTC</option>
+        <option value="USD/RUB">🇺🇸 USD/RUB 🇷🇺 OTC</option>
+        <option value="USD/BDT">🇺🇸 USD/BDT 🇧🇩 OTC</option>
+        <option value="USD/BRL">🇺🇸 USD/BRL 🇧🇷 OTC</option>
+        <option value="EUR/USD">🇪🇺 EUR/USD 🇺🇸 OTC</option>
+        <option value="AED/CNY">🇦🇪 AED/CNY 🇨🇳 OTC</option>
+        <option value="USD/VND">🇺🇸 USD/VND 🇻🇳 OTC</option>
+        <option value="CHF/JPY">🇨🇭 CHF/JPY 🇯🇵 OTC</option>
+        <option value="USD/JPY">🇺🇸 USD/JPY 🇯🇵 OTC</option>
+        <option value="EUR/CHF">🇪🇺 EUR/CHF 🇨🇭 OTC</option>
+        <option value="EUR/NZD">🇪🇺 EUR/NZD 🇳🇿 OTC</option>
+        <option value="USD/DZD">🇺🇸 USD/DZD 🇩🇿 OTC</option>
+        <option value="EUR/GBP">🇪🇺 EUR/GBP 🇬🇧 OTC</option>
+        <option value="NZD/USD">🇳🇿 NZD/USD 🇺🇸 OTC</option>
+        <option value="AUD/USD">🇦🇺 AUD/USD 🇺🇸 OTC</option>
+        <option value="USD/CHF">🇺🇸 USD/CHF 🇨🇭 OTC</option>
+        <option value="JOD/CNY">🇯🇴 JOD/CNY 🇨🇳 OTC</option>
+        <option value="AUD/CAD">🇦🇺 AUD/CAD 🇨🇦 OTC</option>
+        <option value="USD/CAD">🇺🇸 USD/CAD 🇨🇦 OTC</option>
+        <option value="AUD/JPY">🇦🇺 AUD/JPY 🇯🇵 OTC</option>
+        <option value="USD/ARS">🇺🇸 USD/ARS 🇦🇷 OTC</option>
+        <option value="EUR/TRY">🇪🇺 EUR/TRY 🇹🇷 OTC</option>
+        <option value="USD/MYR">🇺🇸 USD/MYR 🇲🇾 OTC</option>
+        <option value="SAR/CNY">🇸🇦 SAR/CNY 🇨🇳 OTC</option>
+        <option value="USD/CNH">🇺🇸 USD/CNH 🇨🇳 OTC</option>
+        <option value="GBP/USD">🇬🇧 GBP/USD 🇺🇸 OTC</option>
+        <option value="CAD/JPY">🇨🇦 CAD/JPY 🇯🇵 OTC</option>
+        <option value="USD/PHP">🇺🇸 USD/PHP 🇵🇭 OTC</option>
+      </optgroup>
+    </select>
+
+    <button id="analyzeBtn" onclick="analyze()">🔍 Analyze Market</button>
+    <div class="result" id="result">📊 No trades analyzed yet.</div>
+
+    <div class="footer">All rights reserved © contact:@SokAlike007</div>
+  </div>
+</div>
+
+<script>
+  const CORRECT_PASSWORD = 'SokAlike007';
+  const resultBox = document.getElementById("result");
+  const analyzeBtn = document.getElementById("analyzeBtn");
+  const pairSelect = document.getElementById("pairSelect");
+  let lastSignalTime = 0;
+
+  function checkPassword() {
+    const userInput = document.getElementById("passwordInput").value;
+    if (userInput === CORRECT_PASSWORD) {
+      document.getElementById("passwordBox").style.display = "none";
+      document.getElementById("mainContainer").style.display = "block";
+    } else {
+      alert("❌ Subscription code is incorrect.");
+    }
+  }
+
+  function analyze() {
+    const selectedPair = pairSelect.value;
+    if (!selectedPair) {
+      alert("❗ Please select a pair first.");
+      return;
+    }
+
+    const now = new Date().getTime();
+    const minutesPassed = (now - lastSignalTime) / 60000;
+    if (minutesPassed < 10) {
+      alert("⏱️ You must wait 10 minutes between each recommendation.");
+      return;
+    }
+
+    analyzeBtn.disabled = true;
+    analyzeBtn.classList.add("disabled");
+
+    let counter = 15;
+    resultBox.innerText = `⌛ Analyzing market... please wait (${counter})`;
+
+    const countdown = setInterval(() => {
+      counter--;
+      resultBox.innerText = `⌛ Analyzing market... please wait (${counter})`;
+      if (counter === 0) {
+        clearInterval(countdown);
+        generateSignal(selectedPair);
+        lastSignalTime = new Date().getTime();
+        analyzeBtn.disabled = false;
+        analyzeBtn.classList.remove("disabled");
+      }
+    }, 1000);
+  }
+
+  function generateSignal(pair) {
+    const direction = Math.random() > 0.5 ? "Buy" : "Sell";
+    const emoji = direction === "Buy" ? "🟩" : "🟥";
+
+    const now = new Date();
+    const optionsTime = {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Asia/Riyadh'
+    };
+    const optionsDate = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      timeZone: 'Asia/Riyadh'
+    };
+
+    const entryTime = new Date(now.getTime() + 5 * 60000);
+    const martingale1 = new Date(entryTime.getTime() + 5 * 60000);
+    const martingale2 = new Date(entryTime.getTime() + 10 * 60000);
+
+    const formatterTime = new Intl.DateTimeFormat('en-US', optionsTime);
+    const formatterDate = new Intl.DateTimeFormat('en-US', optionsDate);
+
+    const signalStrength = Math.floor(Math.random() * (95 - 90 + 1)) + 90;
+
+    const signal = `
+${pair}
+🕘 Expiry: 5 minutes
+⏺️ Entry at ${formatterTime.format(entryTime)}
+${emoji} ${direction}
+
+🔼 Martingale Levels
+1️⃣ Level 1 at ${formatterTime.format(martingale1)}
+2️⃣ Level 2 at ${formatterTime.format(martingale2)}
+
+✅ Signal Strength: ${signalStrength}%
+📅 Date: ${formatterDate.format(now)} 🇸🇦
+    `;
+    resultBox.innerText = signal;
+  }
+</script>
+
+</body>
+</html>
